@@ -12,9 +12,6 @@ input.bin
 output.txt
 vclient.conf
 
-# Папка с сервером (не твой код)
-timp/
-
 # IDE
 .vscode/
 .idea/
