@@ -1,0 +1,20 @@
+# Скомпилированные файлы
+*.o
+vclient
+gen_input
+generate_input
+test_interface
+test_file_io
+test_authenticator
+
+# Бинарные и тестовые файлы
+input.bin
+output.txt
+vclient.conf
+
+# Папка с сервером (не твой код)
+timp/
+
+# IDE
+.vscode/
+.idea/
