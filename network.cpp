@@ -20,7 +20,7 @@ void NetworkSession::connect() {
     if (socket_fd == -1)
         throw std::system_error(errno, std::generic_category(), "socket() failed");
 
-    // Установка таймаута 3 минуты (по методичке)
+    // Установка таймаута 3 минуты
     struct timeval timeout{180, 0};
     setsockopt(socket_fd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
 
@@ -72,11 +72,11 @@ void NetworkSession::recv_binary(void* data, size_t size) {
 }
 
 void NetworkSession::send_vectors(const std::vector<Vector>& vectors) {
-    // Шаг 6: отправка количества векторов
+    // Отправка количества векторов
     uint32_t count = vectors.size();
     send_binary(&count, sizeof(count));
 
-    // Шаги 7-10: отправка векторов
+    // Отправка векторов
     for (const auto& vec : vectors) {
         send_binary(&vec.size, sizeof(vec.size)); // Шаг 7
         if (vec.size > 0) {
