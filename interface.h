@@ -4,7 +4,7 @@
 
 namespace po = boost::program_options;
 
-// Структура для хранения параметров (ТЗ п. 4.2.6)
+// Структура для хранения параметров
 struct Params {
     std::string server_address;
     uint16_t server_port = 33333;
